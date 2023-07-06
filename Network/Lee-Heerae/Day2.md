@@ -17,7 +17,7 @@
 
 ![1](./imagefile/week1/day2-1.png)
 
-![2](./imagefile/week1/day2-2.png)
+![10](./imagefile/week1/day2-10.png)
 
 - 서버는 클라이언트로부터 요청이 올 때까지 기다림
 - 클라이언트에서 소켓이 생성되어 서버에 요청을 보내면 연결이 생성됨
@@ -63,7 +63,7 @@
 
 ## **Demultiplexing 과정 (in UDP)**
 
-![3](./imagefile/week1/day2-3.png)
+![2](./imagefile/week1/day2-2.png)
 
 - 목적지 IP주소와 포트만 같으면 전송
 
@@ -78,7 +78,7 @@
 
 ## **Demultiplexing 과정 (in TCP)**
 
-![4](./imagefile/week1/day2-4.png)
+![3](./imagefile/week1/day2-3.png)
 
 - TCP socket identified by 4-tuple : 아래의 4개가 모두 같은 소켓으로 전달된다.
     - source IP address : IP 주소
@@ -98,7 +98,7 @@
 
 ## UDP segment Header
 
-![5](./imagefile/week1/day2-5.png)
+![4](./imagefile/week1/day2-4.png)
 
 - 필드 4개 → 동작이 단순함을 알 수 있음
 - 한 필드는 16bit (0 ~ 65,536)
@@ -125,7 +125,7 @@
     - retransmission
         - sender가 NAK을 받았을 경우 재전송
 
-![6](./imagefile/week1/day2-6.png)
+![5](./imagefile/week1/day2-5.png)
 
 - receiver가 같은 데이터인지 판별할 수 있도록 sequence number를 넣어 전송
 
@@ -135,11 +135,11 @@
 - 직관적으로 0부터 1씩 늘려가기엔 크기가 너무 커짐
 - sequence number는 1bit면 충분함
 
-![7](./imagefile/week1/day2-7.png)
+![6](./imagefile/week1/day2-6.png)
 
 ## NAK 없는 프로토콜(RDT 2.2)
 
-![8](./imagefile/week1/day2-8.png)
+![7](./imagefile/week1/day2-7.png)
 
 - 무조건 ACK를 보내면서 이전에 받은 시퀀스 넘버를 포함해서 전송
 - 전송한 시퀀스 넘버와 ACK로 받은 시퀀스 넘버를 비교하여 제대로 전송이 되었는지 확인
@@ -152,9 +152,9 @@
     - 짧으면 reaction이 빠름 하지만 오버헤드 발생 가능성이 있음
     - 길면 loss 발생 시 대처가 늦음
 
-![9](./imagefile/week1/day2-9.png)
+![8](./imagefile/week1/day2-8.png)
 
-![10](./imagefile/week1/day2-10.png)
+![9](./imagefile/week1/day2-9.png)
 
 ## 정리
 
