@@ -1,6 +1,6 @@
 # 섹션4. HTTP 메서드
 
-주차: 3일차, 3주차
+
 
 > HTTP 설계시
 리소스와 행위를 분리해야 하며,
@@ -69,7 +69,7 @@ HTTP 메서드 : client가 server에게 기대하는 행위
         **POST - 멱등 메서드 X**
         
     
-    ![Untitled](%E1%84%89%E1%85%A6%E1%86%A8%E1%84%89%E1%85%A7%E1%86%AB4%20HTTP%20%E1%84%86%E1%85%A6%E1%84%89%E1%85%A5%E1%84%83%E1%85%B3%20b4768155473a42f1af5951d925fefe58/Untitled.png)
+    ![Untitled](./img/section04/img1.png)
     
 - 캐시가능(Cacheable Methods)
     - 응답 결과 리소스를 캐시해서 사용해도 되는가?
