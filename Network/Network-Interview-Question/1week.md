@@ -59,8 +59,9 @@
     | 속도 | 느리다. | 빠르다. |
 2. TCP 흐름 제어와 혼잡 제어를 설명하시오
     
-    흐름 제어 방법으로는 Stop and wait과 Sliding window가 있습니다. Stop and wait은 데이터 전송 후 매번 ACK을 통해 잘 도착했음을 확인하고 다음 데이터를 보내는 방식입니다. Sliding window는 버퍼가 사용되어서 window크기만큼 ACK 없이 데이터를 보낼 수 있는 방식입니다.
-    혼잡 제어 방법으로는 Stop and Wait ARQ, Go-Back-N ARQ, Selective-Repeat ARQ가 있습니다. Stop and wait ARQ는 수신 측에서 NACK을 전송하거나 주어진 시간 안에 수신 측에서 ACK을 보내지 않으면 송신 측에서 데이터를 재전송하는 방식입니다. Go back N ARQ는 송신 측에서 데이터를 순차적으로 보내면 수신 측에서 지금까지 받은 데이터에 대한 ACK을 한 번만 보내는 방식입니다. 만약 NACK을 받으면 이전에 보낸 데이터들을 모두 다시 보냅니다. Selective repeat ARQ는 Go baCk N ARQ와 비슷하지만 NACK을 받은 데이터만 다시 보낸다는 차이점이 있습니다.
+   흐름 제어 방법으로는 Stop and wait과 Sliding window가 있습니다. Stop and wait은 데이터 전송 후 매번 ACK을 통해 잘 도착했음을 확인하고 다음 데이터를 보내는 방식입니다. Sliding window는 버퍼가 사용되어서 window크기만큼 ACK 없이 데이터를 보낼 수 있는 방식입니다.
+
+   혼잡 제어 방법으로는 Stop and Wait ARQ, Go-Back-N ARQ, Selective-Repeat ARQ가 있습니다. Stop and wait ARQ는 수신 측에서 NACK을 전송하거나 주어진 시간 안에 수신 측에서 ACK을 보내지 않으면 송신 측에서 데이터를 재전송하는 방식입니다. Go back N ARQ는 송신 측에서 데이터를 순차적으로 보내면 수신 측에서 지금까지 받은 데이터에 대한 ACK을 한 번만 보내는 방식입니다. 만약 NACK을 받으면 이전에 보낸 데이터들을 모두 다시 보냅니다. Selective repeat ARQ는 Go baCk N ARQ와 비슷하지만 NACK을 받은 데이터만 다시 보낸다는 차이점이 있습니다.
     
 3. "www.naver.com" 또는 "www.google.com"에 접속할 때 일어나는 일에 대해 설명하세요.
     
