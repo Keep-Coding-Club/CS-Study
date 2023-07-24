@@ -1,6 +1,8 @@
 # 질문
 
 ## 김선경
+1. Socket의 정의와 TCP의 Socket 통신 과정을 설명하시오.
+2. 3-way-handshake 동작 과정을 설명하시오.
 
 ## 박은비
 
@@ -18,6 +20,38 @@
 # 모범답안
 
 ## 김선경
+1. 
+Socket 정의 : 네트워크 상에서 돌아가는 두 개의 프로그램 간 양방향 통신의 하나의 엔트 포인트
+
+Socket 통신 과정 : 
+   1. server - socket() : (TCP) socket 생성
+
+   2. server - bind() : 생성한 소켓을 server의 특정 port에 bind
+
+   3. server - listen() : 생성한 소켓을 listen 용도로 사용
+
+   4. server - accept() : client로 부터 요청을 받을 준비 완료
+
+   여기까지 수행되면 client로부터 connection이 들어올 때까지 block
+
+   1. client - socket() : socket 생성
+
+   2. client - connect() : 원하는 server의 socket에 connect
+
+   server의 주소와 port 번호가 파라미터로 들어가야 함
+   connect 후 client와 server 간 연결고리 형성
+
+   이후로 wirte(), read()으로 통신 진행
+
+2. 1. Client) TCP SYN send
+    
+    header의 SYN를 1로 하여 server와 TCP 통신을 하고 싶다고 전달
+    
+    client의 sequnece # 알려줌
+    
+   2. Server) SYN ACK send
+   
+   3. Client) ACK (SYN ACK에 관한 ACK)
 
 ## 박은비
 
