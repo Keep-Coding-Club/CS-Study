@@ -6,6 +6,9 @@
 
 ## 박은비
 
+1. TCP의 4-way-handshaking과정 중 Server에서 FIN을 전송하기 전 전송한 패킷이 Routing 지연이나 패킷 유실로 인한 재전송 등으로 FIN 패킷보다 늦게 도착하는 상황이 발생하면 어떻게 될까? 
+2. TCP의 헤더에는 어떤 정보가 담겨 있는가?
+
 ## 유다영
 
 1. 네트워크가 Reliable하다는 것은 무엇일까?(TCP/IP 통신 기준으로)
@@ -54,6 +57,37 @@ Socket 통신 과정 :
    3. Client) ACK (SYN ACK에 관한 ACK)
 
 ## 박은비
+
+1.   
+cf) TCP의 3-way-handshaking
+TCP의 연결을 초기화 할 때 사용 
+
+### TCP의 4-way-handshaking
+- 세션을 종료하기 위해 수행되는 절차
+
+![Pasted image 20230707195239](https://github.com/Keep-Coding-Club/CS-Study/assets/87464975/bcd0d930-30dd-42aa-a51d-386780fbf1bf)
+
+1. client가 연결을 종료하겠다는 FIN msg전송 
+2. server가 msg를 확인하고 자신의 통신이 종료될 때까지 대기 (time wait)
+3. server의 통신이 종료되었다면 FIN msg 전송 
+4. client는 ACK mag 전송
+
+### 만약 패킷 유실 등으로 인해 패킷이 서버 연결 종료 후 (FIN msg 도착 이후) 전달된다면? 
+원래라면... 해당 패킷은 drop 되고 데이터는 유실된다 
+이러한 현상을 방지하기 위해 client는 server로 FIN을 수신하더라도 일정 시간 (default 240 sec) 동안 세션을 남겨두고 잉여 패킷을 기다린다 (time wait)
+
+참고 링크
+[[ 네트워크 쉽게 이해하기 22편 ] TCP 3 Way-Handshake & 4 Way-Handshake (tistory.com)](http://mindnet.tistory.com/entry/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-22%ED%8E%B8-TCP-3-WayHandshake-4-WayHandshake)
+
+2.    
+<img width="600" alt="Pasted image 20230707181335" src="https://github.com/Keep-Coding-Club/CS-Study/assets/87464975/6d99b79c-e388-42d0-8f68-b86ad4b63f32">
+
+- 출발지 도착지 포트
+- handshaking, 응답확인을 위한 sequence number, ack 정보다 담김 
+- 데이터의 시작 위치를 나타내는 data offset 
+- 정보 검출을 위한 flag 변수 
+- 데이터 누락, 정보확인을 위한 checksum
+- 긴급 정보를 확인하기 위한 urgent point
 
 ## 유다영
 
