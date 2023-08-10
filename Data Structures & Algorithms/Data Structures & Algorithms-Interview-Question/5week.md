@@ -3,6 +3,10 @@
 ## 김선경
 
 ## 박은비
+1. 원소의 값이 정렬되지 않은 배열에서 데이터를 검색하는 유일한 방법은? 
+2.  링 버퍼를 활용할 수 있는 곳은?
+3.  이진 탐색 손코딩하기 
+4. 스택의 push(), pop() 함수를 작성하고 설명하기 (수도 코드도 좋음)
 
 ## 유다영
 
@@ -20,6 +24,43 @@
 ## 김선경
 
 ## 박은비
+1. 선형 검색 (p.114)
+2. 오래된 데이터를 버리는 용도로 사용할 수 있다 
+	가장 최근에 들어온 n 개의 데이터만 저장하고 오래된 데이터는 오래된 순서대로 버릴 수 있다  
+3. 
+```python
+def binary_search(array, target, start, end):
+	if start > end:
+		return None
+
+	mid = (start + end) // 2
+
+	if array[mid] == target:
+		return mid
+	elif array[mid] > target:
+		return binary_search(array, target, start, mid -1)
+	else:
+		return binary_search(array, target, mid + 1, end)
+
+a = [1, 2, 3, 4]
+target = 2
+print(binary_search(a, target, 0, len(a) -1))
+```
+4.  
+```python
+def push(self, value: Any) -> None:
+	if is_full():
+		# 예외 처리 
+	self.stk[self.ptr] = value
+	self.ptr += 1
+
+def pop(self) -> Any:
+	if is_empty():
+		# 예외처리 
+	ptr -= 1
+	return self.stk[self.ptr]
+```
+
 
 ## 유다영
 
